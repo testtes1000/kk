@@ -1,254 +1,567 @@
 
 <!DOCTYPE html>
-<html>
- <head>
-  <base target="_blank" /> 
-  <title></title> 
-  <!--[if lte IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]--> 
-  <meta charset="utf-8" /> 
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-  <meta name="referrer" content="unsafe-url" /> 
-  <style type="text/css">
-* {margin: 0px; padding: 0px; list-style-type: none; border: 0px;}
-body {color: #dfe0ff; background-color: #6468a2; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.22);}
-a {color: #d0c9fe; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.32); text-decoration:none;}
-a:hover {color: #010237; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.36);}
-.mainWrap {margin: 0px auto; max-width: 1250px; white-space: nowrap;}
-.clearfloat {clear: both; height: 0px; font-size: 1px; line-height: 0px;}
-.mainColumn {display: inline-block; width: calc(100% - 212px); vertical-align: top; white-space: normal;}
-.leftColumn {display: inline-block; margin: 0px 10px 0px 0px; width: 200px; background-color: #797aad; border-radius: 5px; border: 1px solid #535685; vertical-align: top; white-space: normal;}
-.leftNichesTop a, .hardLinkTopWrap, .content .sponsorArea a.button, #navigation a {background-image: linear-gradient(top, #7579bb, #535685); background-image: -webkit-linear-gradient(top, #7579bb, #535685);background-image: -ms-linear-gradient(top, #7579bb, #535685);background-color: #535685; border: 1px solid #3a3e6c; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);}
-.leftNichesTop a:hover, .content .sponsorArea a:hover.button, #topControls #navigation a:hover {border: 1px solid #1d254f; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.79);}
-#navigation a {border-radius: 3px;}
-.leftNichesTop a.currentNiche {color: #dfe0ff; background-image: none; background-color: #6468a2; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.22);}
-#topControls #navigation a {border: 1px solid #262d58;}
-.sectionTitle {background-image: linear-gradient(top, #4856a4, #1d367f); background-image: -webkit-linear-gradient(top, #4856a4, #1d367f); background-image: -ms-linear-gradient(top, #4856a4, #1d367f); background-color: #1d367f; padding: 0.25em 0px; border-radius: 7px 7px 0px 0px; font-size: 120%; text-align: center;}
-.leftColumn .sectionTitle {border-radius: 0px;}
-.hardLinkTopWrap {display: block; height: 1.5em; border-top: 0px; border-left: 0px; border-right: 0px; border-bottom: 1px solid #1d254f; box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.79);}
-.hardLinkTop {max-width: 1250px; margin: 0px auto; white-space: nowrap; overflow: hidden;}
-.hardLinkTop a, .hardLinkTop p {display: inline-block; padding: 0.25em 1em; border-right: 1px solid #dfe0ff; line-height: 1.2em; font-size: 90%; text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);}
-.hardLinkTop a:hover {background-color: #6468a2;}
-.header {margin: 1em auto; max-width: 1250px; text-align:center;}
-.header h1 {display: inline-block; font-size: 140%; width: 28%; vertical-align: middle;}
-.header #topBanner {display: inline-block; width: 71%; white-space: normal; vertical-align: middle; font-size: 90%;}
-.thumbs, .thumbNichesTop {display: block; margin: 0px auto; text-align: center; max-width: 1250px;}
-.thumbs a, .thumbNichesTop a {display: inline-block;  width: 244px; max-width: 244px; margin: 3px; padding: 4px 1px; border: 1px solid #535685; box-sizing: border-box; background-color: #797aad; border-radius: 5px; vertical-align: middle;}
-.thumbs a div:first-child, .thumbNichesTop a div:first-child {position: relative; height: 0px; padding-bottom: 75.00%;}
-.thumbs a img, .thumbNichesTop a img {display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
-.thumbs a div+div {position: relative; margin-top: -23px; margin-bottom: 3px; line-height: 0px; z-index: 1; text-align: right;}
-.thumbs a div span {display: inline-block; margin-right: 1px; padding: 1px 3px; border-radius: 3px; height: 16px; font-size: 14px; line-height: normal; color: #dddddd; border: 1px solid #dddddd; background-color: #555555; background-color: rgba(85,85,85,0.80); text-shadow: none;}
-.thumbs p {margin-top: 4px; width: 100%; height: 2.50em; overflow: hidden; line-height: normal;}
-.thumbs a div, .thumbNichesTop a div {width: 100%;}
-.progress {position: absolute; visibility: hidden; top: 0px; left: 0px; width: 0px; height: 0px; z-index: 2;}
-.fillBlock, .emptyBlock {position: relative; float: left; height: 80%; border: 1px solid #6468a2; margin: 1px; z-index: 2;}
-.emptyBlock {background: #d0c9fe;}
-.fillBlock {background: #010237;}
-.leftNichesTop a {display: block; padding: 6px 0.4em; height: 1.65em; line-height: 1.65em; text-align: left; font-weight: bold; overflow: hidden;}
-.leftNichesTop a, .leftNichesTop a:hover {border: 0px;}
-.hidePreview {display: none;}
-.showPreview {background-color: #797aad; overflow: hidden; text-align: left;}
-.showPreview a {display: inline-block; margin: 3px; line-height: 0px;}
-.contentWrap {margin: 1.5em auto; max-width: 1250px;}
-.content {float: left; border-radius: 7px; width: 100%; max-width: 675px; max-width: calc(100% - 331px);}
-#topControls {text-align: left; padding: 0.11em 0px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 115%;}
-#navigation {display: inline-block; padding-left: 0.6em; margin-bottom: 1px;}
-#navigation span {margin: 0px;}
-.content .showArea {margin-top: 0px; background-color: #797aad;}
-.content .showArea p {text-align: center;}
-#videoShowArea, #pictureShowArea {position: relative; overflow: hidden; background: #000000; height: 506px;}
-#videoShowArea #playerArea, #videoShowArea #playerArea_wrapper, #videoShowArea iframe, #pictureShowArea img, .nativeVideo {position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;}
-#pictureShowArea img {object-fit: contain;}
-.nativeVideo {cursor: pointer;}
-#navigation a, #navigation span {display: inline-block;  margin: 0px 1px; padding: 3px 4px; min-width: 1em; text-align: center;}
-.content .sponsorArea {background-color: #797aad; border-radius: 0px 0px 7px 7px; text-align: justify; line-height: 0px;}
-.content .sponsorArea a.button {display: inline-block; margin: 4px 1%; width: 30%; height: 2em; line-height: 2em; border-radius: 5px; text-align: center; font-size: 18px;}
-.content .sponsorArea a.bigButton {width: 96%; margin-top: 10px;}
-.controls {min-width: 220px;}
-.controls {position: absolute; bottom: 0px; left: 0px; z-index: 1; width: 100%; height: 2.7em; line-height: 2.7em; text-align: center; font-size: 110%; border-top: 1px solid #dddddd; background-color: #505050; background-color: rgba(80,80,80,0.75); display: flex;}
-.controls a {display: inline-block; width: 27%; text-align: center; color: #ffffff; text-shadow: none;}
-.controls a#left, .controls a#right {border-right: 1px solid #dddddd; border-left: 1px solid #dddddd;}
-#status {display: inline-block; width: 4em; margin: 0px 1%; vertical-align: top; text-align: right; color: #ffffff; text-shadow: none;}
-.advt {float: left; margin-left: 29px; width: 300px; border: 1px solid #535685; border-radius: 7px; line-height: 0px; overflow: hidden; vertical-align: top;}
-.advt .sectionTitle {line-height: normal; font-size: 115%; padding: calc(0.11em + 4px) 0px calc(0.11em + 3px);}
-.advt > iframe {width: 300px; height: 504px; }
-.advt > iframe, .advt ul {padding-top: 2px; background-color: #797aad;}
-.advt li {padding-top: 4px;}
-.advt li:first-child {padding-top: 0px;}
-@media all and (max-width:959px) {
-    .content {float: none; margin: auto; max-width: none;}
-    .header {margin: 0.8em auto 1em;}
-    .header h1, .header #topBanner {width: 100%;}
-    .advt {float: none; margin: 45px auto; width: 100%; line-height: 0px; border: 0px; border-radius: 0px; text-align: center;}
-    .advt .sectionTitle {display: none;}
-    .advt > iframe {max-width: 608px; width: 100%;}
-    .advt > iframe, .advt ul {display: inline-block; padding: 0px; height: 252px; box-sizing: border-box; border: 1px solid #535685; border-radius: 7px; overflow: hidden;}
-    .advt li {display: inline-block; padding-top: 0;}
-}
-@media all and (max-width:607px) {
-    .advt > iframe {max-width: 302px;}
-}
-@media all and (max-width:449px) {
-    .controls {font-size: 100%;}
-    .controls a {width: 25%;}
-    #status {width: 3.5em;}
-}
-@media all and (max-width:961px) {
-    .leftColumn, .textNichesTop {display: none;}
-    .mainColumn {width: 100%;}
-}
-@media all and (min-width:175px) {.thumbs a, .thumbNichesTop a {width: 99%; width: calc(100% - 6px); height: auto;}}
-@media all and (min-width:325px) {.thumbs a, .thumbNichesTop a {width: 49%; width: calc(50% - 6px); height: auto;}}
-@media all and (min-width:575px) {.thumbs a, .thumbNichesTop a {width: 32.33%; width: calc(33.33% - 6px); height: auto;}}
-@media all and (min-width:825px) {.thumbs a, .thumbNichesTop a {width: 24%; width: calc(25% - 6px); height: auto;}}
-@media all and (min-width:1075px) {.thumbs a, .thumbNichesTop a {width: 19%; width: calc(20% - 6px); height: auto;}}
-    @media all and (max-width:959px) {#videoShowArea, #pictureShowArea {height: 0px; padding-bottom: 78%; height: 50vh; padding-bottom: 0vh;}}
-    @media all and (max-width:959px) and (min-aspect-ratio:640/380) {#videoShowArea, #pictureShowArea {height: 0px; padding-bottom: 50%; height: 71vh; padding-bottom: 0vh;}}
-</style> 
-  <script type="text/javascript">var jwplayerUrl="https://mediacnt.com/sexmix.net/jwplayer.js";</script> 
-  <script type="text/javascript" src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Faux%2Fshowmedia.js"></script> 
-  <script>var uid = '26737'; var wid = '60337';</script> 
-  <script src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fcdn.adme-net.com%2Fpop49m8.js"></script> 
- </head> 
- <body vid="56881323" bid="930843617, 536176725, 996042131, 139018726"> 
-  <div class="hardLinkTopWrap">
-   <div class="hardLinkTop">
-    <p>Porn Network</p>
-    <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fdirtydoglinks.com%2F" rel="nofollow">Free Dog Sex</a>
-    <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fdogmovie.net%2F" rel="nofollow">Dog Sex</a> 
-   </div>
-  </div>
-  <div class="clearfloat"></div> 
-  <div class="header">
-   <h1></h1>
-   <div id="topBanner"></div>
-  </div> 
-  <div class="contentWrap"> 
-   <div class="content">
-    <div class="sectionTitle" id="topControls">
-     <div id="navigation">
-      <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2F" target="_self">Home</a>
-      <span> &raquo; </span>
-      <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F" target="_self">Dog Sex</a>
-      <span> &raquo; </span>
-     </div>
-     <span></span>
-    </div> 
- <div class="hidePreview">
-     <a href="https://api.ready.mobi/api/v1/prism/proxy?_=655360508198262318&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F6%2F3%2F63282773%2Fcontent%2F1.mp4" id="v1"><img src="https://api.ready.mobi/api/v1/prism/proxy?_=655360508198262318&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F6%2F3%2F63282773%2Fcontent%2Ftn1.jpg" width="180" height="135" onclick="return ShowFile(1,1,1)" /></a>
-     <a href="https://api.ready.mobi/api/v1/prism/proxy?_=655360508198262318&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F6%2F3%2F63282773%2Fcontent%2F2.mp4" id="v2"><img src="https://api.ready.mobi/api/v1/prism/proxy?_=655360508198262318&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F6%2F3%2F63282773%2Fcontent%2Ftn2.jpg" width="180" height="135" onclick="return ShowFile(2,1,1)" /></a>
-     </div>
-    </div> 
-    <div class="hidePreview"></div>
-    <div class="clearfloat"></div> 
-    <input type="hidden" id="showNumber" value="" />
-    <input type="hidden" id="showType" value="" /> 
-    <div id="sponsorArea" class="sponsorArea" style="text-align: center;">
-     <a class="button bigButton" id="sponsorButton" href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fpaysite%2F996042131%2F0%2F" picturetext="Watch in HD" videotext="Watch FULL Movie" rel="nofollow">Watch FULL Movie</a>
-    </div>
-    <div class="clearfloat"></div> 
-   </div>
-   <div class="advt" id="rightBanner">
-    <div class="sectionTitle">
-     Advertising
-    </div> 
-    <iframe frameborder="0" src="https://cdn.adme-net.com/6580/2right.html" border="0" scrolling="no" width="306" height="505" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
-   </div> 
-   <div class="clearfloat"></div> 
-  </div> 
-  <div class="thumbs">
-   <div class="sectionTitle">
-    Related FREE PORN
-   </div>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F841377875.html">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F7%2F4%2F741114550%2F10115.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:20</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F306118477.html">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F6%2F3%2F63282773%2F10030.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:30</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F260931574.html">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F1%2F7%2F175306903%2F10030.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:25</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F282084250.html">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F6%2F1%2F616500989%2F10040.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:30</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F136637339.html">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F3%2F9%2F398163674%2F20114.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:33</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fout.cgi%3Fniche%3Ddog-sex%26gId%3D370512870">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F1%2F0%2F101431685%2F10085.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:30</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F831887432.html">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F9%2F6%2F962131692%2F10015.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:48</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fout.cgi%3Fniche%3Ddog-sex%26gId%3D141257959">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F8%2F1%2F81940180%2F10040.jpg" alt="" />
-    </div>
-    <div>
-     <span>1:40</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F825551666.html">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F7%2F5%2F753689849%2F10000.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:27</span>
-    </div></a>
-   <a href="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fsexmix.net%2Fdog-sex%2F464175567.html">
-    <div>
-     <img src="https://api.ready.mobi/api/v1/prism/proxy?_=-4221692378170997125&amp;prismid=943211&amp;device=1&amp;url=https%3A%2F%2Fmediacnt.com%2Fsexmix.net%2F5%2F7%2F574185526%2F10070.jpg" alt="" />
-    </div>
-    <div>
-     <span>2:30</span>
-    </div></a> 
-  </div>
-  <div class="clearfloat"></div> 
-  <div style="margin-top: 2em;"></div> 
-  <script>ShowFile(1,2,1)</script> 
-  <script type="text/javascript">
-var l = document.links;
-for(var i=0; i<l.length; i++)
-    AddEventListener(l[i], 'click', function(evt) {
-	if (!document.body || !document.body.getAttribute("vId")) return;
-        var d=new Date(); d.setTime(d.getTime()+86400*1000);
-	var vId = document.body.getAttribute("vId");
-        var ts = Math.floor(Date.now() / 1000);
-        vId = vId^ts;
-        document.cookie = "fromVID="+encodeURIComponent(vId+"-"+ts)+"; expires="+d.toUTCString()+"; path=/;";
-    });
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bestiality frozen - Beast sex videos - Bestialitytaboo</title>
+  <meta name="description" content="Watch bestiality frozen on Beast sex videos - Bestialitytaboo." />
+  <meta name="keywords" content="horse,you,mama" />
+  <meta name="robots" content="index, follow" />
+  <meta name="revisit-after" content="1 days" />
+    <link rel="alternate" type="application/rss+xml" title="Beast sex videos - Bestialitytaboo - RSS Feed" href="/rss/" />
+  <meta name="google-site-verification" content="UMAdd42N1s6uxaVDxwYb4_kbZK_MLUDJ8PywNQbrd8M" />
+<meta name="msvalidate.01" content="7A97CAD47650A90E716ECABF615BCED8" />  <meta property="og:site_name" content="Beast sex videos - Bestialitytaboo" />
+  <meta property="og:title" content="bestiality frozen" />
+  <meta property="og:type" content="video.movie" />
+  <meta property="og:url" content="premium/video/15528/bestiality-frozen/" />
+  <meta property="og:image" content="http://www.bestialitytaboo.tv/media/videos/tmb/000/015/528/1.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="240" />
+  <meta property="og:image:height" content="180" />
+  <meta property="og:video:duration" content="1364" />
+  <meta property="og:video:release_date" content="2018-11-12T18:15:53+00:00" />
+  <meta property="og:description" content="bestiality frozen" />
+  <meta property="video:tag" content="horse" />  
+  <meta property="video:tag" content="you" />  
+  <meta property="video:tag" content="mama" />  
+<link rel="canonical" href="http://www.bestialitytaboo.tv/video/15528/bestiality-frozen/" />
+      <link href="/misc/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/misc/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/templates/defboot/css/all.min.css?t=1539468963"  rel="stylesheet">  
+    
 
-function AddEventListener(elem, event, fn) {
-    if (elem.addEventListener) elem.addEventListener(event, fn, false);
-    else elem.attachEvent("on" + event, function() {return(fn.call(elem, window.event));});
+  <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]--> 
+</head>
+<body>
+<div class="wrapper">
+  <div id="login-container"></div>
+  <div class="full top">
+	<div class="container">
+	  <a href="#menu" id="push-menu" class="btn btn-menu"><i class="fa fa-home"></i></a>
+	  <a href="#search" id="push-search" class="btn btn-menu"><i class="fa fa-search"></i></a>
+	  <div class="logo"><a href="/" title="Beast sex videos - Bestialitytaboo"><img src="/templates/defboot/images/logo.png" alt="Beast sex videos - Bestialitytaboo"></a></div>
+	  <div class="search">
+				<form id="search-form" method="get" action="/search/video/">
+		  <div class="input-group">
+			<input name="s" type="text" class="form-control" placeholder="Search" value="">
+			<div class="input-group-btn">
+              <button type="button" class="btn btn-menu btn-middle dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <i id="search-icon" class="fa fa-video-camera"></i>
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+			  <ul id="search-menu" class="dropdown-menu dropdown-menu-right" role="menu">
+								<li class="active"><a href="#search-video" data-in="video"><i class="fa fa-video-camera"></i> Videos</a></li>
+								<li><a href="#search-photo" data-in="photo"><i class="fa fa-photo"></i> Photos</a></li>
+								<li><a href="#search-user" data-in="user"><i class="fa fa-users"></i> Users</a></li>
+							  </ul>
+			  <button id="search" type="button" class="btn btn-menu btn-search"><i class="fa fa-search"></i></button>			  
+			</div>
+		  </div>
+		</form>
+	  </div>
+	  <div class="top-links">
+				<div class="dropdown">
+		  <button id="orientation" class="btn btn-menu btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false" role="button">
+			<i class="fa fa-venus-mars"></i><span class="hidden-xs hidden-sm"> Straight</span>
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+		  </button>
+		  <ul class="dropdown-menu" arealabelledby="orientation">
+						<li class="active"><a href="/?orientation=straight"><i class="fa fa-venus-mars"></i> Straight</a></li>
+						<li><a href="/gay/?orientation=gay"><i class="fa fa-mars-double"></i> Gay</a></li>
+						<li><a href="/shemale/?orientation=shemale"><i class="fa fa-transgender"></i> Shemale</a></li>
+					  </ul>
+		</div>
+						<a href="/user/signup/" class="btn btn-menu btn-xs"><i class="fa fa-user-plus"></i> Sign Up</a>
+		<a href="/user/login/" class="login btn btn-menu btn-xs"><i class="fa fa-sign-in"></i> Login</a>
+					  </div>
+	</div>
+  </div>
+  <div id="menu" class="full navi">
+	<div class="container">
+	  <ul class="menu"><li><a href="/">Home</a></li><li class="active"><a href="/videos/">Videos <i class="fa fa-angle-down"></i></a><ul><li><a href="/videos/recent/"><i class="fa fa-calendar fa-block"></i>Recent</a><a href="/videos/viewed/"><i class="fa fa-bar-chart-o fa-block"></i>Most Viewed</a><a href="/videos/discussed/"><i class="fa fa-comments fa-block"></i>Most Discussed</a><a href="/videos/rated/"><i class="fa fa-thumbs-up fa-block"></i>Top Rated</a><a href="/videos/favorited/"><i class="fa fa-heart fa-block"></i>Most Favorited</a><a href="/videos/watched/"><i class="fa fa-eye fa-block"></i>Recently Watched</a><a href="/videos/featured/"><i class="fa fa-calendar-check-o fa-block"></i>Featured</a><a href="/playlists/"><i class="fa fa-bars fa-block"></i>Playlists</a></li></ul></li><li><a href="/photos/">Photos <i class="fa fa-angle-down"></i></a><ul><li><a href="/photos/"><i class="fa fa-calendar fa-block"></i>Most Recent</a><a href="/photos/viewed/"><i class="fa fa-bar-chart-o fa-block"></i>Most Viewed</a><a href="/photos/popular/"><i class="fa fa-line-chart fa-block"></i>Most Popular</a><a href="/photos/discussed/"><i class="fa fa-comments fa-block"></i>Most Discussed</a><a href="/photos/rated/"><i class="fa fa-thumbs-up fa-block"></i>Top Rated</a><a href="/photos/favorited/"><i class="fa fa-heart fa-block"></i>Most Favorited</a><a href="/photos/watched/"><i class="fa fa-eye fa-block"></i>Recently Watched</a><a href="/photos/featured/"><i class="fa fa-calendar-check-o fa-block"></i>Featured</a></li></ul></li><li><a href="/categories/">Categories</a></li><li><a href="/community/">Community <i class="fa fa-angle-down"></i></a><ul><li><a href="/community/"><i class="fa fa-rss fa-block"></i>News Feed</a><a href="/user/members/"><i class="fa fa-users fa-block"></i>Profiles</a><a href="/user/search/"><i class="fa fa-user fa-block"></i>Members Search</a></li></ul></li><li class="upload"><a href="/upload/" class="btn btn-menu btn-upload"><i class="fa fa-upload"></i> Upload</a></li><li><a href="https://theporndude.com/" target="_blank" rel="nofollow"><i><img src="https://theporndude.com/graphics/TPD-Favicon-Small-D-24px.png" /></i>Best Porn Sites</a></li></ul>
+	  <div class="clearfix"></div>
+	</div>
+  </div>
+  <div class="container content">
+			  <div id="video" data-id="15528" data-user-id="0">
+				<h1>bestiality frozen</h1>
+		<div class="container-left">
+		<div class="left">
+		  		  <div id="player-container">
+  <div id="player">
+	  	  	  <iframe src="https://www.mujeresdesnudas.club/embed/2458/" frameborder="0" border="0" scrolling="no" width="100%" height="100%" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>  </div>
+</div>
+		  		  <div class="content-group"></div>
+		  <div class="content-group content-group-light">
+			<div class="content-group-left">
+			  <ul class="buttons">
+			    <li><a href="#rate-up" class="btn btn-rating btn-mobile rate-video rate-up" data-rating="1" data-toggle="tooltip" data-placement="top" title="I Like This!"><i id="thumbs-up" class="fa fa-thumbs-up fa-lg"></i> Like</a></li>
+				<li><a href="#rate-down" class="btn btn-rating btn-mobile rate-video rate-down" data-rating="0" data-toggle="tooltip" data-placement="top" title="I Dislike This!"><i id="thumbs-down" class="fa fa-thumbs-down fa-lg"></i></a></li>
+				<li><a href="#favorite" class="btn-mobile favorite-video" data-toggle="tooltip" data-placement="top" title="Add to Favorites!"><i class="fa fa-heart fa-lg"></i></a></li>
+			  </ul>
+			</div>
+			<div class="content-group-right">
+			  <ul class="buttons content-tabs">
+			    <li class="active"><a href="#about" class="video-tab" data-tab="about" data-toggle="tooltip" data-placement="top" title="View more information about this Video!"><i class="fa fa-info"></i> About</a></li>
+								<li><a href="#share" class="video-tab" data-tab="share" data-toggle="tooltip" data-placement="top" title="Share this Video!"><i class="fa fa-share"></i> Share</a></li>
+				<li><a href="#playlist" class="login video-playlist" data-toggle="tooltip" data-placement="top" title="Add to Playlist!"><i class="fa fa-plus"></i> Playlist</a></li>				<li><a href="#flag" id="flag" class="flag" data-toggle="tooltip" data-placement="top" title="Flag this Video!"><i class="fa fa-flag"></i></a></li>
+			  </ul>			  
+			</div>
+			<div class="clearfix"></div>
+		  </div>
+		  <div id="response" class="alert alert-response content-group" style="display: none;"></div>
+		  <div id="report-container"></div>
+		  <div id="content-tab-about" class="content-group content-tab">
+			<div class="content-group-left">
+			  <div class="content-views">
+				<span>576</span> views			  </div>
+			  <div class="content-rating">
+								<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+  					<span class="sr-only">100% Complete</span>
+				  </div>
+				</div>
+				100%
+				<span class="pull-right">
+				  <i class="fa fa-thumbs-up"></i> 2 &nbsp;
+				  <i class="fa fa-thumbs-down"></i> 0				</span>
+				<div class="clearfix"></div>
+			  </div>
+			</div>
+			<div class="content-group-right">
+			  			  <div class="content-info">
+				Categories: 				<a href="/videos/bestiality-latinas/">Bestiality Latinas</a>							  </div>
+			                <div class="content-info">
+                Tags:                 <a href="/search/video/?s=horse">horse</a>,                                 <a href="/search/video/?s=you">you</a>,                                 <a href="/search/video/?s=mama">mama</a>                              </div>
+			  			  <div class="content-info">
+				Added: <span>2 days ago</span>
+			  </div>
+			  			  <div class="content-info">
+				<span>bestiality frozen</span>
+			  </div>
+			  			</div>
+			<div class="clearfix"></div>
+		  </div>
+		  		  <div id="content-tab-share" class="content-group content-tab" style="display: none;">
+			<div class="row">
+			  <div class="col-sm-6 col-md-6">
+				<div class="content-title">Share:</div>
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+              	  <a class="addthis_button_email"></a>
+                  <a class="addthis_button_favorites"></a>
+                  <a class="addthis_button_facebook"></a>
+                  <a class="addthis_button_twitter"></a>
+                  <a class="addthis_button_reddit"></a>
+                  <a class="addthis_button_compact"></a>
+                  <a class="addthis_counter addthis_bubble_style"></a>
+                </div>              
+                <script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+                <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f9d8c433d6f0bfa"></script>
+                <!-- AddThis Button END -->				
+			  </div>
+			  <div class="col-sm-6 col-md-6">
+				<div class="content-title">Link to this video:</div>
+				<input type="text" class="form-control autoselect" value="http://www.bestialitytaboo.tv/video/15528/bestiality-frozen/" readonly>
+			  </div>
+			  			  <div class="col-sm-12">
+				<div class="content-title">Embed:</div>
+				<input type="text" class="form-control autoselect" value='<iframe src="http://www.bestialitytaboo.tv/embed/15528/" frameborder="0" border="0" scrolling="no" width="100%" height="100%"></iframe>' readonly>
+			  </div>
+			  			</div>
+		  </div>
+		  		  <div class="content-group content-group-light">
+			<div id="comments-header" class="content-group-header">
+			  <div class="pull-left">Comments (0)</div>
+			  <div class="pull-right"><small>Show Comments</small></div>
+			  <div class="clearfix"></div>
+			</div>
+		  </div>
+		  <div id="comments-body" class="content-group" style="display: none;">
+									<div class="alert alert-warning content-group text-center"><a href="/user/login/" class="login"><span>Login</span></a> or <a href="/user/signup/"><span>signup</span></a> to post comments!</div>
+						<div id="comments-container-15528" class="comments-container">
+  <ul class="media-list">
+	  </ul>
+    <div id="no-comments" class="none">No comments added!</div>
+  </div>
+		  </div>
+		  		</div>
+		</div>
+		<div class="right">
+		  		</div>
+		<div class="clearfix"></div>
+		<div class="tablist">
+		  <ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#related" aria-controls="related" role="tab" data-toggle="tab">Related Videos</a></li>						<li role="presentation"><a href="#user-videos" data-url="video_user_videos&id=15528" data-target="#user-videos" aria-controls="user-videos" role="tab" data-toggle="tabajax">elwing&#39;s Videos</a></li>			<li role="presentation"><a href="#thumbs" aria-controls="thumbs" role="tab" data-toggle="tab">Thumbs</a></li>
+		  </ul>
+		  <div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="related">
+			  <ul class="videos related">
+    <li id="video-11997--related" class="video">
+	<a href="/video/11997/bestiality-dog/" title="Bestiality dog" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/011/997/5.jpg" alt="Bestiality dog" id="preview-11997--related" data-id="11997" data-thumb="5" data-thumbs="5">
+		<span class="duration">07:01</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/11997/bestiality-dog/" title="Bestiality dog">Bestiality dog</a></span>
+	<span class="views">44983 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 80%</span>
+	  </li>
+    <li id="video-13888--related" class="video">
+	<a href="/video/13888/bestiality/" title="bestiality" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/013/888/1.jpg" alt="bestiality" id="preview-13888--related" data-id="13888" data-thumb="1" data-thumbs="3">
+		<span class="duration">00:16</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/13888/bestiality/" title="bestiality">bestiality</a></span>
+	<span class="views">4250 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 50%</span>
+	  </li>
+    <li id="video-8945--related" class="video video-private">
+	<a href="/video/8945/30s-bestiality/" title="30s bestiality" class="image">
+	  <div class="video-thumb video-private">
+		<img src="/media/videos/tmb/000/008/945/1.jpg" alt="30s bestiality" id="preview-8945--related" data-id="8945" data-thumb="1" data-thumbs="20">
+		<span class="duration">10:55</span>
+				<div class="private-overlay">Private</div>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/8945/30s-bestiality/" title="30s bestiality">30s bestiality</a></span>
+	<span class="views">1991 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 81%</span>
+	  </li>
+    <li id="video-13491--related" class="video">
+	<a href="/video/13491/old-bestiality-vhs/" title="Old bestiality vhs" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/013/491/1.jpg" alt="Old bestiality vhs" id="preview-13491--related" data-id="13491" data-thumb="1" data-thumbs="3">
+		<span class="duration">08:47</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/13491/old-bestiality-vhs/" title="Old bestiality vhs">Old bestiality vhs</a></span>
+	<span class="views">13021 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 78%</span>
+	  </li>
+    <li id="video-12601--related" class="video">
+	<a href="/video/12601/bestiality-web-cam/" title="Bestiality web cam" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/012/601/1.jpg" alt="Bestiality web cam" id="preview-12601--related" data-id="12601" data-thumb="1" data-thumbs="3">
+		<span class="duration">32:46</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/12601/bestiality-web-cam/" title="Bestiality web cam">Bestiality web cam</a></span>
+	<span class="views">31006 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 91%</span>
+	  </li>
+    <li id="video-138--related" class="video">
+	<a href="/video/138/bestiality-webcam-dog-win/" title="Bestiality - Webcam Dog WIN" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/000/138/1.jpg" alt="Bestiality - Webcam Dog WIN" id="preview-138--related" data-id="138" data-thumb="1" data-thumbs="20">
+		<span class="duration">08:23</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/138/bestiality-webcam-dog-win/" title="Bestiality - Webcam Dog WIN">Bestiality - Webcam Dog WIN</a></span>
+	<span class="views">280959 views</span>
+	<span class="rating down"><i class="fa fa-thumbs-down"></i> 44%</span>
+	  </li>
+    <li id="video-14052--related" class="video">
+	<a href="/video/14052/bestiality-horse-sex/" title="Bestiality horse sex" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/014/052/1.jpg" alt="Bestiality horse sex" id="preview-14052--related" data-id="14052" data-thumb="1" data-thumbs="3">
+		<span class="duration">00:27</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/14052/bestiality-horse-sex/" title="Bestiality horse sex">Bestiality horse sex</a></span>
+	<span class="views">10048 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 87%</span>
+	  </li>
+    <li id="video-12216--related" class="video">
+	<a href="/video/12216/promoting-bestiality/" title="Promoting Bestiality" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/012/216/1.jpg" alt="Promoting Bestiality" id="preview-12216--related" data-id="12216" data-thumb="1" data-thumbs="20">
+		<span class="duration">16:37</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/12216/promoting-bestiality/" title="Promoting Bestiality">Promoting Bestiality</a></span>
+	<span class="views">70083 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 82%</span>
+	  </li>
+    <li id="video-10203--related" class="video">
+	<a href="/video/10203/video-bestiality/" title="video bestiality" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/010/203/1.jpg" alt="video bestiality" id="preview-10203--related" data-id="10203" data-thumb="1" data-thumbs="20">
+		<span class="duration">00:58</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/10203/video-bestiality/" title="video bestiality">video bestiality</a></span>
+	<span class="views">30448 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 70%</span>
+	  </li>
+    <li id="video-12468--related" class="video">
+	<a href="/video/12468/bestiality-sex-music/" title="Bestiality sex music" class="image">
+	  <div class="video-thumb thumb-preview">
+		<img src="/media/videos/tmb/000/012/468/1.jpg" alt="Bestiality sex music" id="preview-12468--related" data-id="12468" data-thumb="1" data-thumbs="3">
+		<span class="duration">02:32</span>
+			  </div>
+	</a>
+	<span class="title"><a href="/video/12468/bestiality-sex-music/" title="Bestiality sex music">Bestiality sex music</a></span>
+	<span class="views">12397 views</span>
+	<span class="rating up"><i class="fa fa-thumbs-up"></i> 83%</span>
+	  </li>
+  </ul>
+<div class="clearfix"></div>
+			  			  <div class="text-center"><a href="#related-more" class="btn btn-more" id="related-more" data-page="2"><i class="fa fa-spinner"></i> More Related Videos</a></div>
+			  			</div>
+						<div role="tabpanel" class="tab-pane" id="user-videos"></div>			<div role="tabpanel" class="tab-pane" id="thumbs">
+			  <ul class="thumbs">
+								<li><div class="video-thumb"><img src="/media/videos/tmb/000/015/528/1.jpg" alt="Thumb 1"></div></li>
+								<li><div class="video-thumb"><img src="/media/videos/tmb/000/015/528/2.jpg" alt="Thumb 2"></div></li>
+								<li><div class="video-thumb"><img src="/media/videos/tmb/000/015/528/3.jpg" alt="Thumb 3"></div></li>
+							  </ul>
+			  <div class="clearfix"></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  	<div class="adv-container"><div id="adv-4" class="adv"><script type="text/javascript" id="wau_scr_5155bbf4">
+    var wau_p = wau_p || []; wau_p.push(["z1nu", "5155bbf4", false]);
+    (function() {
+        var s=document.createElement("script"); s.type="text/javascript";
+        s.async=true; s.src="http://widgets.amung.us/a_pro.js";
+        document.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script></div></div>	
+  </div>
+  <div class="footer">
+	<div class="container">
+	  <div class="row">
+		<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-footer">
+<li class="list-header">Main</li>
+<li><a href="/">Home</a></li>
+<li><a href="/upload/">Upload</a></li>
+<li><a href="/user/signup/">Sign Up</a></li>
+<li><a href="/user/login/" class="login">Login</a></li>
+</ul></div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-footer">
+<li class="list-header">Information</li>
+<li><a href="/static/terms-and-conditions/" rel="nofollow">Terms And Conditions</a></li>
+<li><a href="/static/privacy-policy/" rel="nofollow">Privacy Policy</a></li>
+<li><a href="/static/dmca/" rel="nofollow">DMCA</a></li>
+<li><a href="/static/2257/" rel="nofollow">2257</a></li>
+</ul></div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-footer">
+<li class="list-header">Help and Support</li>
+<li><a href="/feedback/" rel="nofollow">Contact Support</a></li>
+</ul></div>
+</div>	  </div>
+	</div>
+  </div>
+  <div class="copyright">
+	<div class="container">
+	  <div class="row">
+		&copy; Beast sex videos - Bestialitytaboo 2018	  </div>
+	</div>
+  </div>
+</div>
+<script>var base_url='http://www.bestialitytaboo.tv', cur_url='http://www.bestialitytaboo.tv/video/15528/bestiality-frozen/', ajax_url='http://www.bestialitytaboo.tv', rel_url='', tmb_url='/media/videos/tmb', age_check=0;</script>
+<script src="/misc/jquery/jquery.min.js"></script>
+<script src="/misc/bootstrap/js/bootstrap.min.js"></script>  
+<script src="/templates/defboot/js/all.min.js?t=1539468963"></script>
+<script>
+$(document).ready(function() {
+  var video_id = $("#video").data('id');  
+  autosize($('textarea'));  
+  $("a.video-tab").on('click', function(e) {
+    e.preventDefault();
+    $('#response').hide();
+    $(this).parent().addClass('active').siblings().removeClass('active');
+    $('.content-tab').hide();
+    $("#content-tab-" + $(this).data('tab')).show();
+  });
+  
+  if ($(window).width() <= 960) {
+	
+  }
+  
+  $(".rate-video").on('click', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: ajax_url + '/ajax.php?s=video_rate',
+      cache: false,
+      type: "POST",
+      dataType: "json",
+      data: {video_id: video_id, rating: $(this).data('rating')},
+      success: function(response) {
+        if (response.status == '1') {
+          $('i#thumbs-up,i#thumbs-down').removeClass('text-success').removeClass('text-danger');
+          if (response.rating == '1') {
+            $('i#thumbs-up').addClass('text-success');
+          } else {
+            $('i#thumbs-down').addClass('text-danger');
+          }
+          $('.content-rating').html(response.code);
+          $('.rate-video').addClass('disabled');
+        } else {
+          $("#response").html(close + response.msg);
+          $("#response").addClass(response.class);
+          $("#response").show();
+        }
+      }
+    });
+  });
+  
+  $('.favorite-video').on('click', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: ajax_url + '/ajax.php?s=video_favorite',
+      cache: false,
+      type: "POST",
+      dataType: "json",
+      data: {video_id: video_id},
+      success: function(response) {
+        if (response.status == '1') {
+          $('.favorite-video i').addClass('text-danger');
+        } else {
+          $("#response").html(close + response.msg);
+          $("#response").addClass(response.class);
+          $("#response").show();
+        }
+      }
+    });
+  });
+
+  $("a[id='related-more']").on('click', function() {
+    var page = $(this).data('page');
+    $.ajax({
+      url: ajax_url + '/ajax.php?s=video_related',
+      cache: false,
+      type: "POST",
+      dataType: "json",
+      data: { video_id: video_id, page: page },
+      success: function(response) {
+        if (response.status == '1') {
+          $("a[id='related-more']").data('page', response.page);
+          $("ul[class='videos related'] li:last").after(response.code);
+          if (response.end == '1') {
+            $("a[id='related-more']").fadeOut();
+          }
+        }
+      }
+    });
+  });
+  $(".video-playlist").on('click', function(e) {
+    e.preventDefault();
+    $.get(ajax_url + '/ajax.php?s=video_playlists&id=' + video_id, function(response) {
+  	  $("#content-tab-playlist").html(response);
+  	  $(".content-tab").hide();
+  	  $("#content-tab-playlist").show();
+    });	  
+  });
+  
+  $("#content-tab-playlist").on('click', "button#playlist-new", function(e) {
+	e.preventDefault();
+	$.get(ajax_url + '/ajax.php?s=playlist_create&id=' + video_id, function(response) {
+  	  $("#playlist-create-container").html(response);
+  	  $("#playlist-create-modal").modal();
+	});
+  });    
+  
+  $("#content-tab-playlist").on('click', "button#playlist-create", function(e) {
+	e.preventDefault();  
+    var name = $("input[name='name']").val();
+    var desc = $("textarea[name='description']").val();
+    var tags = $("textarea[name='tags']").val();
+    var type = $("input[name='type']:checked").val();
+    $.ajax({
+      url: ajax_url + '/ajax.php?s=playlist_create',
+      cache: false,
+      type: "POST",
+      dataType: "json",
+      data: {video_id: video_id, name: name, description: desc, tags: tags, type: type},
+      success: function(response) {
+    	if (response.status == '1') {
+    		$("#response-playlist").removeClass('alert-danger').addClass('alert-success');
+    		$("#content-tab-playlist").hide();
+    		setTimeout(function(){$("#playlist-create-modal").modal('toggle');}, 2000);
+    	} else {
+    		$("#response-playlist").removeClass('alert-success').addClass('alert-danger');
+    	}
+    	
+    	$("#response-playlist").html(close + response.msg);
+    	$("#response-playlist").show();
+      }
+    });	
+  });
+  
+  $('#flag').on('click', function(e) {
+    e.preventDefault();
+    $.get(ajax_url + '/ajax.php?s=video_report&modal=1', function(response) {
+      $("#report-container").removeClass();
+      $("#report-container").html(response);
+      $("#report-container").show();
+      $("#report-modal").modal();
+    });
+  });
+
+  $("#report-container").on('click', '#flag-send', function(e) {
+    var reason = $("input[name='reason']:checked").val();
+    var message = $("textarea[name='message']").val();
+    $.ajax({
+      url: ajax_url + '/ajax.php?s=video_report',
+      cache: false,
+      type: "POST",
+      dataType: "json",
+      data: {video_id: video_id, reason: reason, message: message},
+      success: function(response) {
+        $("#report-modal").modal('toggle');
+        if (response.status == '1') {
+          $("#flag i").addClass('text-success');
+          $("#flag").prop('disabled', true);
+          $("#response").removeClass('alert-danger').addClass('alert-success');
+        } else {
+          $("#response").removeClass('alert-success').addClass('alert-danger');
+        }
+
+        $("#response").html(close + response.msg);
+        $("#response").show();
+      }
+    });
+  });
+});
+</script>
+<script> 
+var azar = Math.floor(Math.random() * 1) + 1;
+function publicidad1() {
+$.getScript('//bestialitytaboo.tv/pop2.js');
 }
-</script> 
- </body>
+
+if(azar==1){
+publicidad1();
+}
+    </script>
+
+<script type="text/javascript">
+var uid = '3075';
+var wid = '15929';
+</script>
+<script type="text/javascript" src="//cdn.popcash.net/pop.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46721345-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-46721345-1');
+</script></body>
 </html>
